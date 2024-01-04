@@ -1,0 +1,201 @@
+[root@localhost bin]# touch internsct1
+[root@localhost bin]# chmod +x internsct1
+[root@localhost bin]# internsct1 --manual
+internsct1(1)                  User Commands                  internsct1(1)
+
+NAME
+       internsct1 - Custom Linux command for operations
+
+SYNOPSIS
+       internsct1 [OPTIONS] COMMAND [ARGS]...
+
+DESCRIPTION
+       Custom Linux command for various operations. Supports CPU and memory information, user management, and file details.
+
+OPTIONS
+	 --manual 	       Shows internsct1 manual.
+       --help                Display help for intersct1.
+       --version             Display the version information.
+
+COMMANDS
+       cpu getinfo           Get CPU information.
+       memory getinfo        Get memory information.
+       user create <username> Create a new user.
+       user list             List all regular users on the server.
+       user list --sudo-only List all users with sudo permissions.
+       file getinfo <file>   Get information about a file.
+                             Options:
+                               --size, -s          Print file size.
+                               --permissions, -p   Print file permissions.
+                               --owner, -o         Print file owner.
+                               --last-modified, -m Print last modified time of the file.
+
+EXAMPLES
+       internsct1 cpu getinfo
+       internsct1 memory getinfo
+       internsct1 user create rehbar_khan
+       internsct1 user list
+       internsct1 user list --sudo-only
+       internsct1 file getinfo hello.txt
+       internsct1 file getinfo --size hello.txt
+       internsct1 file getinfo --permissions hello.txt
+       internsct1 file getinfo --owner hello.txt
+       internsct1 file getinfo --last-modified hello.txt
+
+       lscpu(1), free(1)
+[root@localhost bin]# internsct1 --help
+internsct1(1)                  User Commands                  internsct1(1)
+
+NAME
+       internsct1 - Custom Linux command for operations
+
+SYNOPSIS
+       internsct1 [OPTIONS] COMMAND [ARGS]...
+
+DESCRIPTION
+       Custom Linux command for various operations. Supports CPU and memory information, user management, and file details.
+
+OPTIONS
+	 --manual 	       Shows internsct1 manual.
+       --help                Display help for intersct1.
+       --version             Display the version information.
+
+COMMANDS
+       cpu getinfo           Get CPU information.
+       memory getinfo        Get memory information.
+       user create <username> Create a new user.
+       user list             List all regular users on the server.
+       user list --sudo-only List all users with sudo permissions.
+       file getinfo <file>   Get information about a file.
+                             Options:
+                               --size, -s          Print file size.
+                               --permissions, -p   Print file permissions.
+                               --owner, -o         Print file owner.
+                               --last-modified, -m Print last modified time of the file.
+
+EXAMPLES
+       internsct1 cpu getinfo
+       internsct1 memory getinfo
+       internsct1 user create rehbar_khan
+       internsct1 user list
+       internsct1 user list --sudo-only
+       internsct1 file getinfo hello.txt
+       internsct1 file getinfo --size hello.txt
+       internsct1 file getinfo --permissions hello.txt
+       internsct1 file getinfo --owner hello.txt
+       internsct1 file getinfo --last-modified hello.txt
+
+       lscpu(1), free(1)
+[root@localhost bin]# internsct1 --version
+internsct1 v0.1.0
+[root@localhost bin]# internsct1 cpu getinfo
+Architecture:          i686
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                1
+On-line CPU(s) list:   0
+Thread(s) per core:    1
+Core(s) per socket:    1
+CPU socket(s):         1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 142
+Stepping:              10
+CPU MHz:               1800.000
+BogoMIPS:              3600.00
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              6144K
+[root@localhost bin]# internsct memory getinfo
+bash: internsct: command not found
+[root@localhost bin]# internsct1 memory getinfo
+             total       used       free     shared    buffers     cached
+Mem:       2071204     731936    1339268          0      57636     417960
+-/+ buffers/cache:     256340    1814864
+Swap:      3071992          0    3071992
+[root@localhost bin]# internsct1 user create Xenon_linux
+User Xenon_linux created successfully.
+[root@localhost bin]# internsct1 user list
+root
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+uucp
+operator
+games
+gopher
+ftp
+nobody
+dbus
+usbmuxd
+rpc
+avahi-autoipd
+vcsa
+rtkit
+abrt
+saslauth
+avahi
+postfix
+qpidd
+apache
+ntp
+rpcuser
+nfsnobody
+haldaemon
+pulse
+gdm
+stap-server
+sshd
+tcpdump
+Xenon_linux
+[root@localhost bin]# internsct1 user list --sudo-only
+root
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+uucp
+operator
+games
+gopher
+ftp
+nobody
+dbus
+usbmuxd
+rpc
+avahi-autoipd
+vcsa
+rtkit
+abrt
+saslauth
+avahi
+postfix
+qpidd
+apache
+ntp
+rpcuser
+nfsnobody
+haldaemon
+pulse
+gdm
+stap-server
+sshd
+tcpdump
+Xenon_linux
+[root@localhost bin]# internsct1 file getinfo internsct1
+File: internsct1
+Access: -rwxr-xr-x
+Size(B): 3779
+Owner: root
+Modify: 2024-01-04 19:22:56.167699775 +0530
+[root@localhost bin]# 
